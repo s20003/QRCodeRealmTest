@@ -16,6 +16,7 @@ import jp.ac.it_college.std.s20003.qrcoderealmtest.databinding.ActivityDataRegis
 class DataRegisterActivity : AppCompatActivity() {
     private lateinit var binding: ActivityDataRegisterBinding
 
+    private lateinit var realm: Realm
     private lateinit var adapter: DataListAdapter
 
     private lateinit var resultQR: String
@@ -39,6 +40,8 @@ override fun onCreate(savedInstanceState: Bundle?) {
     binding = ActivityDataRegisterBinding.inflate(layoutInflater)
     setContentView(binding.root)
 
+    realm = Realm.getDefaultInstance()
+
     binding.cameraButton.setOnClickListener {
         IntentIntegrator(this).apply {
             setDesiredBarcodeFormats(IntentIntegrator.QR_CODE)
@@ -58,10 +61,9 @@ override fun onCreate(savedInstanceState: Bundle?) {
     // val editText1 = binding.textView1 // findViewById<TextView>(R.id.textView1)
     // val registerButton = binding.registerButton
 
-    val realm = Realm.getDefaultInstance()
-
     binding.registerButton.setOnClickListener {
-        val text = binding.textView1.text.toString()
+        val text = "Test"
+        // val text = binding.textView1.text.toString()
         if (text.isEmpty()) {
             return@setOnClickListener
         }
@@ -74,21 +76,21 @@ override fun onCreate(savedInstanceState: Bundle?) {
         finish()
     }
 
-    /* // コメントを外したらエラーになる
+    /* // ?を外したらエラーになる
     realm.addChangeListener {
         val dataList = it.where(Data::class.java).findAll().map{ data -> data.name }
+        println(dataList[0])
         recyclerView?.post {
             adapter.updateDataList(dataList)
         }
     }
 
     realm.executeTransactionAsync {
-        val dataList = it.where(Data::class.java).findAll().map{ data -> data.name}
+        val dataList = it.where(Data::class.java).findAll().map{ data -> data.name }
         recyclerView?.post {
             adapter.updateDataList(dataList)
         }
-    }
-    */
+    } */
 }
 
     // QRコード読み込み部分
