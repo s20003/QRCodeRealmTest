@@ -2,39 +2,32 @@ package jp.ac.it_college.std.s20003.qrcoderealmtest
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import io.realm.Realm
+import androidx.recyclerview.widget.LinearLayoutManager
+import io.realm.kotlin.Realm
+import io.realm.kotlin.RealmConfiguration
+import io.realm.kotlin.ext.query
+import io.realm.kotlin.query.RealmResults
 import jp.ac.it_college.std.s20003.qrcoderealmtest.databinding.ActivityInformationBinding
 
 class InformationActivity : AppCompatActivity() {
     private lateinit var binding: ActivityInformationBinding
-    private lateinit var realm: Realm
-    private lateinit var adapter: DataListAdapter
+
+    val config = RealmConfiguration.Builder(schema = setOf(Data::class))
+        .build()
+    val realm: Realm = Realm.open(config)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityInformationBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        realm = Realm.getDefaultInstance()
+        val result: RealmResults<Data> = realm.query<Data>().find()
 
-        val recyclerView = binding.dataList
-        recyclerView.adapter = adapter
-
-        /*
-        realm.addChangeListener {
-            val dataList = it.where(Data::class.java).findAll().map { data -> data.name }
-            recyclerView.post {
-                adapter.updateDataList(dataList)
+        binding.dataList.apply {
+            layoutManager = LinearLayoutManager(this@InformationActivity).apply {
+                orientation = LinearLayoutManager.VERTICAL
             }
+            adapter = DataListAdapter(result)
         }
-
-        realm.executeTransactionAsync {
-            val dataList = it.where(Data::class.java).findAll().map { data -> data.name }
-            recyclerView.post {
-                adapter.updateDataList(dataList)
-            }
-        }
-
-         */
     }
 }

@@ -6,7 +6,7 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/nameView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
@@ -15,54 +15,94 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/usageView1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView1" />
+        app:layout_constraintTop_toBottomOf="@+id/nameView1" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/nameView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/usageView1" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/usageView2"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/nameView2" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/nameView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/usageView2" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/usageView3"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+        app:layout_constraintTop_toBottomOf="@+id/nameView3" />
+
+    <TextView
+        android:id="@+id/nameView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usageView3" />
+
+    <TextView
+        android:id="@+id/usageView4"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameView4" />
+
+    <TextView
+        android:id="@+id/nameView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/usageView4" />
+
+    <TextView
+        android:id="@+id/usageView5"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameView5" />
 
     <Button
         android:id="@+id/camera_button"
